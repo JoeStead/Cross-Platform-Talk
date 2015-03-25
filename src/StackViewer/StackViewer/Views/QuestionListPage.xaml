@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StackViewer.Views.QuestionListPage">
+
+  <ListView ItemsSource="{Binding QuestionList.Items}" ItemSelected="QuestionSelected">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition />
+              <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="auto" />
+              <ColumnDefinition />
+
+            </Grid.ColumnDefinitions>
+            
+            <Label Text="{Binding Title}" Grid.Row="0" Grid.Column="1" />
+            
+            <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
+              <Label Text="Is Answered:" />
+              <Label Text="{Binding Is_Answered}" />
+              <Label Text="Score:" />
+              <Label Text="{Binding Score}" />
+              <Label Text="Answers:" />
+              <Label Text="{Binding Answer_Count}" />
+            </StackLayout>
+
+          </Grid>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
+</ContentPage>
